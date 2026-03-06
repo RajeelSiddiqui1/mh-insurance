@@ -1,48 +1,46 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    /* Primary Blue: #2859AC -> HSL(218, 62%, 42%) */
-    --background: 220 100% 99%;
+    /* Insurance Professional: Deep Navy & Gold */
+    --background: 210 40% 98%;
     --foreground: 222 47% 11%;
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
-    --primary: 218 62% 42%;
+    --primary: 215 56% 23%; /* Deep Navy */
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222 47% 11.2%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    /* Accent Orange: #F48E25 -> HSL(30, 91% 55%) */
-    --accent: 30 91% 55%;
+    --accent: 35 92% 43%; /* Premium Gold */
     --accent-foreground: 210 40% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 218 62% 42%;
-    --radius: 0.75rem;
+    --ring: 215 56% 23%;
+    --radius: 1rem;
   }
 
   .dark {
     --background: 222 47% 11%;
     --foreground: 210 40% 98%;
-    --card: 215 25% 15%;
+    --card: 222 47% 15%;
     --card-foreground: 210 40% 98%;
     --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
-    --primary: 218 62% 42%;
+    --primary: 215 56% 35%;
     --primary-foreground: 210 40% 98%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 30 91% 55%;
+    --accent: 35 92% 50%;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
@@ -61,10 +59,20 @@
   }
 }
 
-.service-card-hover {
-  @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
+.hero-gradient {
+  background: linear-gradient(135deg, rgba(26, 54, 93, 0.05) 0%, rgba(217, 119, 6, 0.02) 100%);
 }
 
-.hero-gradient {
-  background: radial-gradient(circle at top right, rgba(40, 89, 172, 0.1), transparent);
+.glass-card {
+  @apply bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-white/20 shadow-xl;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
 }

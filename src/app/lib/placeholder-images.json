@@ -1,17 +1,52 @@
-
 {
   "placeholderImages": [
     {
-      "id": "hero-bg",
-      "description": "Happy family in front of their new home, representing protection and insurance.",
-      "imageUrl": "https://picsum.photos/seed/insurance-hero/1200/600",
+      "id": "hero-1",
+      "description": "Happy family in front of their home",
+      "imageUrl": "https://picsum.photos/seed/family-home/1200/800",
       "imageHint": "family home"
     },
     {
-      "id": "commercial-service",
-      "description": "Modern office building representing commercial insurance.",
-      "imageUrl": "https://picsum.photos/seed/commercial/400/300",
-      "imageHint": "office building"
+      "id": "hero-2",
+      "description": "Professional business office team",
+      "imageUrl": "https://picsum.photos/seed/business-office/1200/800",
+      "imageHint": "business office"
+    },
+    {
+      "id": "hero-3",
+      "description": "Luxury car on a mountain road",
+      "imageUrl": "https://picsum.photos/seed/luxury-car/1200/800",
+      "imageHint": "luxury car"
+    },
+    {
+      "id": "service-commercial",
+      "description": "Commercial building",
+      "imageUrl": "https://picsum.photos/seed/commercial/600/400",
+      "imageHint": "office skyscraper"
+    },
+    {
+      "id": "service-home",
+      "description": "Beautiful residential house",
+      "imageUrl": "https://picsum.photos/seed/home/600/400",
+      "imageHint": "modern house"
+    },
+    {
+      "id": "service-auto",
+      "description": "Electric vehicle charging",
+      "imageUrl": "https://picsum.photos/seed/auto/600/400",
+      "imageHint": "electric car"
+    },
+    {
+      "id": "service-life",
+      "description": "Couple walking on beach at sunset",
+      "imageUrl": "https://picsum.photos/seed/life/600/400",
+      "imageHint": "happy retirement"
+    },
+    {
+      "id": "service-health",
+      "description": "Modern hospital interior",
+      "imageUrl": "https://picsum.photos/seed/health/600/400",
+      "imageHint": "medical care"
     }
   ]
 }
