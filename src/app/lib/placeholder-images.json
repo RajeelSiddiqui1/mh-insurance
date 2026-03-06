@@ -1,0 +1,17 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "hero-bg",
+      "description": "Happy family in front of their new home, representing protection and insurance.",
+      "imageUrl": "https://picsum.photos/seed/insurance-hero/1200/600",
+      "imageHint": "family home"
+    },
+    {
+      "id": "commercial-service",
+      "description": "Modern office building representing commercial insurance.",
+      "imageUrl": "https://picsum.photos/seed/commercial/400/300",
+      "imageHint": "office building"
+    }
+  ]
+}
