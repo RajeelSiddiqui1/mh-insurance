@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Sparkles, Loader2, ArrowRight, CheckCircle2, ShieldInfo } from "lucide-react";
+import { Sparkles, Loader2, ArrowRight, CheckCircle2, Shield } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { aiServiceSummary } from "@/ai/flows/ai-service-summary";
 import { Badge } from "@/components/ui/badge";
@@ -42,6 +42,8 @@ export function ServiceCard({ id, name, description, longDescription, features, 
       });
       setSummary(result.summary);
     } catch (error) {
+      // Errors are handled by the global error boundary/listener if applicable
+      // But we log it for the developer in the meantime
       console.error("Failed to fetch summary:", error);
     } finally {
       setLoading(false);
@@ -107,7 +109,7 @@ export function ServiceCard({ id, name, description, longDescription, features, 
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <h5 className="font-bold text-primary flex items-center gap-2">
-                <ShieldInfo className="w-4 h-4 text-accent" /> Key Benefits
+                <Shield className="w-4 h-4 text-accent" /> Key Benefits
               </h5>
               <ul className="space-y-2">
                 {(features || ["24/7 Claim Support", "Flexible Premiums", "Global Coverage"]).map((f, i) => (
