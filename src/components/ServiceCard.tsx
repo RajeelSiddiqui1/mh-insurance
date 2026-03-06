@@ -42,8 +42,6 @@ export function ServiceCard({ id, name, description, longDescription, features, 
       });
       setSummary(result.summary);
     } catch (error) {
-      // Errors are handled by the global error boundary/listener if applicable
-      // But we log it for the developer in the meantime
       console.error("Failed to fetch summary:", error);
     } finally {
       setLoading(false);
