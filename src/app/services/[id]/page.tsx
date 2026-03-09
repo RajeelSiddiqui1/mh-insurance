@@ -132,18 +132,11 @@ export default function ServiceDetailPage() {
                 <h3 className="text-2xl font-bold">Start Your Quote</h3>
                 <p className="text-white/70 text-sm">Our advisors are ready to help you tailor the perfect plan for your needs.</p>
                 <div className="space-y-4">
+                  <Link href={`/contact`}>
                   <Button className="w-full bg-accent text-white h-14 rounded-2xl font-black text-lg hover:scale-105 active:scale-95 transition-all">
                     Apply Now
                   </Button>
-                  <Button variant="outline" className="w-full h-14 rounded-2xl border-white/20 bg-white/10 hover:bg-white hover:text-primary font-bold transition-all">
-                    Schedule a Consultation
-                  </Button>
-                </div>
-                <div className="flex items-start gap-4 pt-4 text-white/60">
-                   <Info className="w-5 h-5 shrink-0" />
-                   <p className="text-xs italic leading-relaxed">
-                     Terms and conditions apply. All premium calculations are estimates based on standard risk assessments.
-                   </p>
+                  </Link>
                 </div>
               </div>
             </div>

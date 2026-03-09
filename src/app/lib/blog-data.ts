@@ -28,7 +28,7 @@ export const blogPosts: BlogPost[] = [
     author: "MH Insurance Team",
     date: "March 20, 2024",
     category: "Commercial",
-    image: "https://picsum.photos/seed/commercial/1200/800",
+    image: "/assets/commerical.jpg",
     readTime: "5 min read"
   },
 
@@ -48,7 +48,7 @@ export const blogPosts: BlogPost[] = [
     author: "MH Insurance Team",
     date: "March 10, 2024",
     category: "Home",
-    image: "https://picsum.photos/seed/home/1200/800",
+    image: "/assets/home.jpg",
     readTime: "4 min read"
   },
 
@@ -68,7 +68,7 @@ export const blogPosts: BlogPost[] = [
     author: "MH Insurance Team",
     date: "March 5, 2024",
     category: "Business",
-    image: "https://picsum.photos/seed/business/1200/800",
+    image: "/assets/bussiness.jpg",
     readTime: "5 min read"
   },
 
@@ -88,7 +88,7 @@ export const blogPosts: BlogPost[] = [
     author: "MH Insurance Team",
     date: "February 25, 2024",
     category: "Auto",
-    image: "https://picsum.photos/seed/auto/1200/800",
+    image: "/assets/car.jpg",
     readTime: "4 min read"
   },
 
@@ -108,7 +108,7 @@ export const blogPosts: BlogPost[] = [
     author: "MH Insurance Team",
     date: "February 15, 2024",
     category: "Life",
-    image: "https://picsum.photos/seed/life/1200/800",
+    image: "/assets/life.jpg",
     readTime: "4 min read"
   },
 
@@ -128,7 +128,7 @@ export const blogPosts: BlogPost[] = [
     author: "MH Insurance Team",
     date: "February 5, 2024",
     category: "Health",
-    image: "https://picsum.photos/seed/health/1200/800",
+    image: "/assets/health.jpg",
     readTime: "5 min read"
   },
 
@@ -148,7 +148,7 @@ export const blogPosts: BlogPost[] = [
     author: "MH Insurance Team",
     date: "January 28, 2024",
     category: "Mortgage",
-    image: "https://picsum.photos/seed/mortgage/1200/800",
+    image: "/assets/mortgage.jpg",
     readTime: "4 min read"
   },
 
@@ -168,7 +168,7 @@ export const blogPosts: BlogPost[] = [
     author: "MH Insurance Team",
     date: "January 20, 2024",
     category: "Child",
-    image: "https://picsum.photos/seed/child/1200/800",
+    image: "/assets/children.jpg",
     readTime: "4 min read"
   },
 
@@ -188,7 +188,7 @@ export const blogPosts: BlogPost[] = [
     author: "MH Insurance Team",
     date: "January 10, 2024",
     category: "Travel",
-    image: "https://picsum.photos/seed/travel/1200/800",
+    image: "/assets/travel.jpg",
     readTime: "4 min read"
   }
 ];
