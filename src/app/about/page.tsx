@@ -3,7 +3,7 @@
 
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { ShieldCheck, Award, Users, Globe, History, Heart } from "lucide-react";
+import { ShieldCheck, Award, Users, Globe, History, Heart, Sparkles, Building2, Landmark } from "lucide-react";
 import Image from "next/image";
 
 const team = [
@@ -11,13 +11,13 @@ const team = [
     name: "Marcus Holloway",
     role: "Founder & CEO",
     image: "https://picsum.photos/seed/ceo/400/400",
-    bio: "25+ years in global insurance strategy.",
+    bio: "25+ years in global insurance strategy and risk management.",
   },
   {
     name: "Elena Rodriguez",
     role: "Head of Claims",
     image: "https://picsum.photos/seed/claims-head/400/400",
-    bio: "Expert in rapid claim resolution and client advocacy.",
+    bio: "Expert in rapid claim resolution and client advocacy workflows.",
   },
   {
     name: "David Chen",
@@ -29,7 +29,42 @@ const team = [
     name: "Sophia Williams",
     role: "Chief AI Officer",
     image: "https://picsum.photos/seed/ai-officer/400/400",
-    bio: "Pioneering the future of AI-driven policy analysis.",
+    bio: "Pioneering the future of AI-driven predictive policy analysis.",
+  }
+];
+
+const storyRows = [
+  {
+    title: "A Legacy of Trust",
+    subtitle: "OUR FOUNDATION",
+    description: "Founded in 1998 in the heart of the financial district, MH Insurance was built on a single principle: absolute transparency. For over two decades, we have stood as a pillar of stability for millions of families and businesses. Our journey began with a small team of three advisors and has grown into a global powerhouse, yet our commitment to individual client care remains unchanged.",
+    icon: <Landmark className="w-6 h-6 text-accent" />,
+    image: "https://picsum.photos/seed/about-legacy/800/600",
+    imageHint: "historical building"
+  },
+  {
+    title: "Innovating for the Future",
+    subtitle: "NEXT-GEN PROTECTION",
+    description: "We don't just follow trends; we set them. By integrating cutting-edge AI and machine learning into our risk assessment models, we provide coverage that is more precise, more affordable, and faster than ever before. Our digital-first approach ensures that filing a claim or updating a policy is a matter of seconds, not days, putting the power of protection directly in your hands.",
+    icon: <Sparkles className="w-6 h-6 text-accent" />,
+    image: "https://picsum.photos/seed/about-tech/800/600",
+    imageHint: "digital technology"
+  },
+  {
+    title: "Global Strength, Local Presence",
+    subtitle: "WORLDWIDE REACH",
+    description: "With offices in over 40 countries and a network of 15,000 expert advisors, we provide world-class protection with a neighborly touch. Whether you are insuring a small retail shop in a local town or a multi-national logistics fleet crossing the Atlantic, we have the specialized knowledge and resources to be right where you need us, exactly when you need us.",
+    icon: <Globe className="w-6 h-6 text-accent" />,
+    image: "https://picsum.photos/seed/about-global/800/600",
+    imageHint: "global network"
+  },
+  {
+    title: "Beyond the Policy",
+    subtitle: "OUR PROMISE",
+    description: "To us, you are never just a policy number. We are deeply committed to social responsibility and community empowerment. A significant portion of every premium is reinvested into local disaster relief and financial literacy programs. We believe that a secure society is a prosperous one, and we work tirelessly to build a safer future for the next generation.",
+    icon: <Heart className="w-6 h-6 text-accent" />,
+    image: "https://picsum.photos/seed/about-community/800/600",
+    imageHint: "community help"
   }
 ];
 
@@ -50,7 +85,7 @@ export default function AboutPage() {
                 Our Legacy is <br /> <span className="text-accent italic">Your Security.</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                For over two decades, MH Insurance has been at the forefront of providing elite protection. We believe that insurance should be more than just a policy; it should be a promise of stability and a foundation for your dreams.
+                For over two decades, MH Insurance has been at the forefront of providing elite protection. We believe that insurance should be more than just a policy; it should be a promise.
               </p>
               <div className="grid grid-cols-2 gap-8 pt-4">
                 <div className="space-y-2">
@@ -58,7 +93,7 @@ export default function AboutPage() {
                   <div className="text-sm font-bold text-muted-foreground uppercase tracking-widest">Active Policies</div>
                 </div>
                 <div className="space-y-2">
-                  <div className="text-4xl font-black text-primary dark:text-white">$4.2B</div>
+                  <div className="text-4xl font-black text-primary dark:text-white">$4.2B+</div>
                   <div className="text-sm font-bold text-muted-foreground uppercase tracking-widest">Claims Paid</div>
                 </div>
               </div>
@@ -72,29 +107,37 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Mission & Values */}
-        <section className="bg-primary py-24 text-white">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-              <h2 className="text-accent font-black tracking-widest uppercase text-xs">Our North Star</h2>
-              <h3 className="text-4xl md:text-5xl font-black">Values That Define Us</h3>
-            </div>
-            <div className="grid md:grid-cols-3 gap-12">
-              {[
-                { icon: <ShieldCheck className="w-8 h-8" />, title: "Absolute Trust", desc: "Transparency is our baseline. We build relationships on honesty and clear communication." },
-                { icon: <Globe className="w-8 h-8" />, title: "Global Vision", desc: "Local expertise with a global network to protect you wherever life takes you." },
-                { icon: <Heart className="w-8 h-8" />, title: "Client Advocacy", desc: "We don't just sell policies; we stand by your side during the most difficult moments." }
-              ].map((v, i) => (
-                <div key={i} className="space-y-6 p-8 rounded-[2rem] bg-white/5 border border-white/10 hover:bg-white/10 transition-all">
-                  <div className="p-4 rounded-2xl bg-accent text-white inline-block shadow-lg">
-                    {v.icon}
+        {/* Alternating Story Rows */}
+        <section className="py-24 space-y-24 bg-slate-50 dark:bg-slate-900/50">
+          {storyRows.map((row, index) => (
+            <div key={index} className="container mx-auto px-4 md:px-6">
+              <div className={`grid lg:grid-cols-2 gap-16 items-center ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
+                <div className={`space-y-6 ${index % 2 !== 0 ? 'lg:order-last' : ''}`}>
+                  <div className="inline-flex items-center gap-3 text-accent font-black text-xs tracking-[0.2em] uppercase">
+                    {row.icon} {row.subtitle}
                   </div>
-                  <h4 className="text-2xl font-bold">{v.title}</h4>
-                  <p className="text-white/60 leading-relaxed">{v.desc}</p>
+                  <h2 className="text-4xl md:text-5xl font-black text-primary dark:text-white tracking-tighter">
+                    {row.title}
+                  </h2>
+                  <p className="text-xl text-muted-foreground leading-relaxed font-medium">
+                    {row.description}
+                  </p>
                 </div>
-              ))}
+                <div className="relative">
+                   <div className="absolute -inset-4 bg-primary/5 rounded-[3rem] blur-2xl" />
+                   <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800 aspect-[4/3]">
+                      <Image 
+                        src={row.image} 
+                        fill 
+                        alt={row.title} 
+                        className="object-cover hover:scale-105 transition-transform duration-700" 
+                        data-ai-hint={row.imageHint}
+                      />
+                   </div>
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
         </section>
 
         {/* Team Section */}
@@ -102,19 +145,19 @@ export default function AboutPage() {
           <div className="container mx-auto px-4 md:px-6 text-center">
             <div className="max-w-3xl mx-auto mb-20 space-y-4">
               <h2 className="text-accent font-black tracking-widest uppercase text-xs">Meet The Leaders</h2>
-              <h3 className="text-4xl md:text-5xl font-black text-primary dark:text-white">Expertise You Can Trust</h3>
+              <h3 className="text-4xl md:text-5xl font-black text-primary dark:text-white tracking-tighter">Expertise You Can Trust</h3>
               <p className="text-muted-foreground text-lg">Guided by a diverse team of industry veterans and innovators.</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {team.map((member, i) => (
                 <div key={i} className="group relative">
-                  <div className="relative h-96 rounded-[2.5rem] overflow-hidden shadow-xl border-4 border-white dark:border-slate-800 transition-transform group-hover:-translate-y-2">
+                  <div className="relative h-[450px] rounded-[2.5rem] overflow-hidden shadow-xl border-4 border-white dark:border-slate-800 transition-transform group-hover:-translate-y-2">
                     <Image src={member.image} alt={member.name} fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity" />
-                    <div className="absolute bottom-6 left-6 right-6 text-left text-white translate-y-4 group-hover:translate-y-0 transition-transform">
-                      <h4 className="text-xl font-bold">{member.name}</h4>
-                      <p className="text-accent text-xs font-bold uppercase tracking-widest mb-2">{member.role}</p>
-                      <p className="text-xs text-white/70 line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity">{member.bio}</p>
+                    <div className="absolute bottom-8 left-8 right-8 text-left text-white translate-y-4 group-hover:translate-y-0 transition-transform">
+                      <h4 className="text-2xl font-bold mb-1">{member.name}</h4>
+                      <p className="text-accent text-xs font-bold uppercase tracking-widest mb-4">{member.role}</p>
+                      <p className="text-sm text-white/70 line-clamp-3 opacity-0 group-hover:opacity-100 transition-opacity leading-relaxed">{member.bio}</p>
                     </div>
                   </div>
                 </div>
