@@ -9,6 +9,8 @@ import {
   Car, 
   Heart, 
   Stethoscope, 
+  Key, 
+  Baby, 
   Plane 
 } from "lucide-react";
 
@@ -30,6 +32,15 @@ const services = [
     features: ["Structural Protection", "Fire & Flood Coverage", "Contents Insurance", "Temporary Accommodation", "24/7 Home Emergency Service"],
     image: "https://picsum.photos/seed/home/600/400",
     icon: <Home className="w-6 h-6" />,
+  },
+  {
+    id: "service-business",
+    name: "Business",
+    description: "Comprehensive risk management for small to large enterprises.",
+    longDescription: "Secure your business operations with our multi-peril policies. We cover assets, revenue, and key person insurance to ensure that your business stays resilient in any market condition.",
+    features: ["Asset Protection", "Revenue Safeguard", "Key Person Insurance", "Liability Extensions", "Cyber Risk Coverage"],
+    image: "https://picsum.photos/seed/business/600/400",
+    icon: <Building2 className="w-6 h-6" />,
   },
   {
     id: "service-auto",
@@ -59,9 +70,27 @@ const services = [
     icon: <Stethoscope className="w-6 h-6" />,
   },
   {
+    id: "service-mortgage",
+    name: "Mortgage",
+    description: "Protect your property investment and mortgage repayments.",
+    longDescription: "Ensure your home remains yours. Mortgage protection covers your loan repayments in case of critical illness, disability, or unemployment, giving your family a safety net during tough times.",
+    features: ["Loan Protection", "Repayment Coverage", "Disability Benefits", "Critical Illness Add-on", "Peace of Mind"],
+    image: "https://picsum.photos/seed/mortgage/600/400",
+    icon: <Key className="w-6 h-6" />,
+  },
+  {
+    id: "service-child",
+    name: "Child",
+    description: "Secure your child's future education and financial well-being.",
+    longDescription: "Invest in your child's dreams. Our child plans provide a guaranteed corpus for higher education and marriage, with premium waiver benefits to ensure their future is protected even in your absence.",
+    features: ["Education Fund", "Marriage Corpus", "Premium Waiver", "Guaranteed Payouts", "Growth Benefits"],
+    image: "https://picsum.photos/seed/child/600/400",
+    icon: <Baby className="w-6 h-6" />,
+  },
+  {
     id: "service-travel",
     name: "Travel",
-    description: "Worry-free adventures with coverage for medical emergencies and cancellations.",
+    description: "Worry-free adventures with coverage for medical emergencies.",
     longDescription: "Travel the world without fear. We cover everything from passport loss and trip delays to emergency medical evacuations and lost baggage. Our 24/7 global concierge service is always just one call away.",
     features: ["Trip Cancellation Cover", "Medical Emergency Cover", "Loss of Baggage", "Personal Accident", "24/7 Global Concierge"],
     image: "https://picsum.photos/seed/travel/600/400",

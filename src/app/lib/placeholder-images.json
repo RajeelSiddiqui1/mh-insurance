@@ -53,6 +53,24 @@
       "description": "Airplane wing above clouds",
       "imageUrl": "https://picsum.photos/seed/travel/600/400",
       "imageHint": "travel airplane"
+    },
+    {
+      "id": "service-mortgage",
+      "description": "Signing house keys papers",
+      "imageUrl": "https://picsum.photos/seed/mortgage/600/400",
+      "imageHint": "mortgage signing"
+    },
+    {
+      "id": "service-child",
+      "description": "Children playing in park",
+      "imageUrl": "https://picsum.photos/seed/child/600/400",
+      "imageHint": "child protection"
+    },
+    {
+      "id": "service-business",
+      "description": "Startup team meeting",
+      "imageUrl": "https://picsum.photos/seed/business/600/400",
+      "imageHint": "business startup"
     }
   ]
 }
