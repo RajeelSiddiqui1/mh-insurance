@@ -4,49 +4,50 @@
 
 @layer base {
   :root {
-    /* Insurance Professional: Deep Navy & Gold */
+    /* Premium Insurance: Deep Royal Navy & Executive Gold */
     --background: 210 40% 98%;
     --foreground: 222 47% 11%;
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
-    --primary: 215 56% 23%; /* Deep Navy */
+    --primary: 215 56% 18%; /* Darker Royal Navy */
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222 47% 11.2%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 35 92% 43%; /* Premium Gold */
+    --accent: 38 92% 50%; /* Vibrant Premium Gold */
     --accent-foreground: 210 40% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 215 56% 23%;
-    --radius: 1rem;
+    --ring: 215 56% 18%;
+    --radius: 1.25rem;
   }
 
   .dark {
-    --background: 222 47% 11%;
+    /* Midnight Slate & Luminous Amber */
+    --background: 222 47% 6%;
     --foreground: 210 40% 98%;
-    --card: 222 47% 15%;
+    --card: 222 47% 10%;
     --card-foreground: 210 40% 98%;
-    --popover: 222 47% 11%;
+    --popover: 222 47% 6%;
     --popover-foreground: 210 40% 98%;
-    --primary: 215 56% 35%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 217 91% 60%; /* Bright Modern Blue */
+    --primary-foreground: 222 47% 11%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 35 92% 50%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 45 93% 47%; /* Deep Luminous Amber */
+    --accent-foreground: 222 47% 11%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 217 91% 60%;
   }
 }
 
@@ -60,19 +61,33 @@
 }
 
 .hero-gradient {
-  background: linear-gradient(135deg, rgba(26, 54, 93, 0.05) 0%, rgba(217, 119, 6, 0.02) 100%);
+  background: radial-gradient(circle at top right, hsla(var(--accent) / 0.05), transparent),
+              radial-gradient(circle at bottom left, hsla(var(--primary) / 0.05), transparent);
 }
 
 .glass-card {
-  @apply bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-white/20 shadow-xl;
+  @apply bg-white/70 dark:bg-slate-900/40 backdrop-blur-xl border border-white/20 dark:border-white/5 shadow-2xl;
 }
 
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(1deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
 }
 
 .animate-float {
-  animation: float 4s ease-in-out infinite;
+  animation: float 6s ease-in-out infinite;
+}
+
+.text-gradient-gold {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600;
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(-5%); }
+  50% { transform: translateY(0); }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s ease-in-out infinite;
 }
