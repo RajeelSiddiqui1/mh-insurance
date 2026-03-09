@@ -1,115 +1,24 @@
+
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { ServiceCard } from "@/components/ServiceCard";
 import { Footer } from "@/components/Footer";
+import { services } from "@/app/lib/services-data";
+import { blogPosts } from "@/app/lib/blog-data";
 import { 
-  Briefcase, 
-  Home, 
-  Building2, 
-  Car, 
-  Heart, 
-  Stethoscope, 
-  Key, 
-  Baby, 
-  Plane,
-  ShieldCheck,
-  Zap,
-  Users,
-  Award
+  ShieldCheck, 
+  Zap, 
+  Users, 
+  Award,
+  ArrowRight,
+  Calendar,
+  Clock
 } from "lucide-react";
-
-const services = [
-  {
-    id: "service-commercial",
-    name: "Commercial",
-    description: "Tailored protection for businesses, covering liabilities, property damage, and specialized industry risks.",
-    longDescription: "Our commercial insurance provides a solid foundation for your enterprise. We cover everything from public liability and professional indemnity to complex cargo and maritime risks. Our experts work with you to identify unique industry threats and mitigate potential losses before they happen.",
-    features: ["Property Damage Coverage", "Employee Liability", "Business Interruption", "Public Liability", "Professional Indemnity", "Cargo & Logistics Protection"],
-    image: "https://picsum.photos/seed/commercial/800/600",
-    icon: <Briefcase className="w-6 h-6" />,
-    delay: 0,
-  },
-  {
-    id: "service-home",
-    name: "Home",
-    description: "Complete coverage for your most valuable asset, including structural protection and personal belongings.",
-    longDescription: "Your home is more than just a building; it's your sanctuary. Our policy protects against natural disasters, theft, and accidental damage. We also include personal liability coverage and 24/7 emergency repair assistance to give you absolute peace of mind regardless of the season.",
-    features: ["Structural Protection", "Fire & Flood Coverage", "Contents Insurance", "Temporary Accommodation", "24/7 Home Emergency Service", "Valuables Protection"],
-    image: "https://picsum.photos/seed/home/800/600",
-    icon: <Home className="w-6 h-6" />,
-    delay: 100,
-  },
-  {
-    id: "service-business",
-    name: "Business",
-    description: "Comprehensive risk management for small to medium enterprises, ensuring continuity and growth.",
-    longDescription: "Secure your business operations with our multi-peril policies. We cover assets, revenue, and key person insurance to ensure that your business stays resilient in any market condition. Whether you're a startup or an established firm, we have the right fit.",
-    features: ["Asset Protection", "Revenue Safeguard", "Key Person Insurance", "Liability Extensions", "Cyber Risk Coverage", "Legal Expense Support"],
-    image: "https://picsum.photos/seed/business/800/600",
-    icon: <Building2 className="w-6 h-6" />,
-    delay: 200,
-  },
-  {
-    id: "service-auto",
-    name: "Auto",
-    description: "Stay safe on the road with policies covering liability, collision, and comprehensive roadside assistance.",
-    longDescription: "Drive with total confidence. Our auto insurance offers comprehensive roadside assistance, accidental damage coverage, and zero-depreciation benefits. Whether it's your daily commute or a long-distance road trip, our global network ensures help is always just a call away.",
-    features: ["Accident Coverage", "24/7 Roadside Assistance", "Theft Protection", "Third-party Liability", "Personal Accident Cover", "New-for-Old Car Replacement"],
-    image: "https://picsum.photos/seed/auto/800/600",
-    icon: <Car className="w-6 h-6" />,
-    delay: 300,
-  },
-  {
-    id: "service-life",
-    name: "Life",
-    description: "Provide a secure future for your loved ones with flexible terms and reliable payout guarantees.",
-    longDescription: "Life is unpredictable, but your family's financial future doesn't have to be. We offer term plans and whole life policies that guarantee stability for your heirs, including education funds for children and retirement planning. Secure your legacy today.",
-    features: ["Terminal Illness Benefit", "Critical Illness Cover", "Tax Savings", "Flexible Payout Options", "Child Education Support", "Whole Life Maturity Benefits"],
-    image: "https://picsum.photos/seed/life/800/600",
-    icon: <Heart className="w-6 h-6" />,
-    delay: 400,
-  },
-  {
-    id: "service-health",
-    name: "Health",
-    description: "Access top-tier medical care without financial stress, from routine checkups to specialized treatments.",
-    longDescription: "Don't let medical bills drain your life savings. Our health plans cover hospitalization, daycare procedures, and maternity expenses at thousands of network hospitals worldwide. Includes preventative health checkups and specialist consults via our mobile app.",
-    features: ["Cashless Hospitalization", "OPD Cover", "Maternity Benefits", "Free Health Checkups", "International Medical Coverage", "No-Claim Bonuses"],
-    image: "https://picsum.photos/seed/health/800/600",
-    icon: <Stethoscope className="w-6 h-6" />,
-    delay: 500,
-  },
-  {
-    id: "service-mortgage",
-    name: "Mortgage",
-    description: "Protect your home loan repayments against life's uncertainties, ensuring your family stays in their home.",
-    longDescription: "Ensure your home remains yours. Mortgage protection covers your loan repayments in case of critical illness, disability, or involuntary unemployment, giving your family a safety net during tough times. It's the ultimate protection for your biggest investment.",
-    features: ["Loan Protection", "Repayment Coverage", "Disability Benefits", "Critical Illness Add-on", "Unemployment Cover", "Decreasing Term Options"],
-    image: "https://picsum.photos/seed/mortgage/800/600",
-    icon: <Key className="w-6 h-6" />,
-    delay: 600,
-  },
-  {
-    id: "service-child",
-    name: "Child",
-    description: "Secure your child's future education and well-being with specialized savings and protection plans.",
-    longDescription: "Invest in your child's dreams. Our child plans provide a guaranteed corpus for higher education and marriage, with premium waiver benefits to ensure their future is protected even in your absence. Start saving today for a brighter tomorrow.",
-    features: ["Education Fund", "Marriage Corpus", "Premium Waiver", "Guaranteed Payouts", "Growth Benefits", "Life Cover for Parent"],
-    image: "https://picsum.photos/seed/child/800/600",
-    icon: <Baby className="w-6 h-6" />,
-    delay: 700,
-  },
-  {
-    id: "service-travel",
-    name: "Travel",
-    description: "Worry-free adventures with coverage for medical emergencies, trip cancellations, and lost luggage.",
-    longDescription: "Travel the world without fear. We cover everything from passport loss and trip delays to emergency medical evacuations and lost baggage. Our 24/7 global concierge service is always just one call away, no matter which timezone you're in.",
-    features: ["Trip Cancellation Cover", "Medical Emergency Cover", "Loss of Baggage", "Personal Accident", "24/7 Global Concierge", "Delayed Flight Compensation"],
-    image: "https://picsum.photos/seed/travel/800/600",
-    icon: <Plane className="w-6 h-6" />,
-    delay: 800,
-  },
-];
+import Link from "next/link";
+import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
 export default function LandingPage() {
   return (
@@ -166,12 +75,54 @@ export default function LandingPage() {
                   id={service.id}
                   name={service.name}
                   description={service.description}
-                  longDescription={service.longDescription}
-                  features={service.features}
                   image={service.image}
                   icon={service.icon}
-                  delay={service.delay}
                 />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Blog Preview Section */}
+        <section className="py-24 bg-slate-50 dark:bg-slate-900/50">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
+              <div className="space-y-4 max-w-2xl">
+                <h2 className="text-accent font-bold tracking-[0.2em] uppercase text-xs">Knowledge Center</h2>
+                <h3 className="text-4xl font-extrabold text-primary dark:text-white">Latest from Our Experts</h3>
+                <p className="text-muted-foreground text-lg">Explore our latest insights on risk management, financial safety, and industry innovation.</p>
+              </div>
+              <Link href="/blog">
+                <Button variant="outline" className="rounded-full px-8 h-14 border-2 font-bold group">
+                  View All Posts <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {blogPosts.slice(0, 3).map((post) => (
+                <Link key={post.id} href={`/blog/${post.id}`} className="group">
+                   <Card className="rounded-[2.5rem] overflow-hidden border-none shadow-xl h-full flex flex-col group-hover:-translate-y-2 transition-transform duration-500">
+                      <div className="relative h-56 overflow-hidden">
+                        <Image src={post.image} alt={post.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                      </div>
+                      <CardContent className="p-8 flex-1 flex flex-col">
+                        <div className="flex items-center gap-4 text-[10px] text-muted-foreground font-bold uppercase tracking-widest mb-4">
+                          <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {post.date}</span>
+                          <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {post.readTime}</span>
+                        </div>
+                        <h4 className="text-xl font-bold text-primary dark:text-white group-hover:text-accent transition-colors line-clamp-2 mb-4">
+                          {post.title}
+                        </h4>
+                        <p className="text-sm text-muted-foreground line-clamp-2 mb-6 flex-1">
+                          {post.excerpt}
+                        </p>
+                        <div className="flex items-center gap-2 text-accent text-xs font-bold uppercase tracking-widest">
+                          Read Full Article <ArrowRight className="w-4 h-4" />
+                        </div>
+                      </CardContent>
+                   </Card>
+                </Link>
               ))}
             </div>
           </div>
@@ -186,7 +137,7 @@ export default function LandingPage() {
                 Secure your future with <br className="hidden md:block" /> elite protection today.
               </h3>
               <p className="text-muted-foreground text-xl max-w-2xl mx-auto relative z-10">
-                Join over 2 million policyholders who trust MH Insurance for their security and peace of mind.
+                Join over 2.5 million policyholders who trust MH Insurance for their security and peace of mind.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto relative z-10">
                 <input 
@@ -194,9 +145,9 @@ export default function LandingPage() {
                   placeholder="name@company.com" 
                   className="w-full sm:w-auto flex-1 h-14 px-6 rounded-2xl border-2 bg-background focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all"
                 />
-                <button className="w-full sm:w-auto bg-primary text-white dark:bg-accent dark:text-white px-10 h-14 rounded-2xl font-bold hover:scale-105 active:scale-95 shadow-xl transition-all">
+                <Button className="w-full sm:w-auto bg-primary text-white dark:bg-accent dark:text-white px-10 h-14 rounded-2xl font-bold hover:scale-105 active:scale-95 shadow-xl transition-all">
                   Get Free Quote
-                </button>
+                </Button>
               </div>
             </div>
           </div>

@@ -38,10 +38,16 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-6">Quick Links</h3>
             <ul className="space-y-4">
-              {["Home", "Services", "About Us", "Claims", "Our Experts", "Blog"].map((link) => (
-                <li key={link}>
-                  <Link href="#" className="text-muted-foreground hover:text-accent transition-colors">
-                    {link}
+              {[
+                { name: "Home", href: "/" },
+                { name: "Services", href: "/#services" },
+                { name: "About Us", href: "/about" },
+                { name: "Blog", href: "/blog" },
+                { name: "Contact", href: "/contact" }
+              ].map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-muted-foreground hover:text-accent transition-colors">
+                    {link.name}
                   </Link>
                 </li>
               ))}
@@ -53,7 +59,7 @@ export function Footer() {
             <ul className="space-y-4">
               {["Commercial", "Home & Auto", "Life Insurance", "Business", "Health Plans", "Travel Coverage"].map((link) => (
                 <li key={link}>
-                  <Link href="#" className="text-muted-foreground hover:text-accent transition-colors">
+                  <Link href="/#services" className="text-muted-foreground hover:text-accent transition-colors">
                     {link}
                   </Link>
                 </li>

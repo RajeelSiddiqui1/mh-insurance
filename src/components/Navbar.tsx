@@ -3,21 +3,24 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, ShieldCheck } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { name: "Home", href: "#" },
-  { name: "Services", href: "#services" },
-  { name: "About", href: "#about" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "Services", href: "/#services" },
+  { name: "Blog", href: "/blog" },
+  { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
+  const pathname = usePathname();
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -31,7 +34,7 @@ export function Navbar() {
     <header
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
-        scrolled
+        scrolled || pathname !== "/"
           ? "bg-background/80 backdrop-blur-md border-b py-3"
           : "bg-transparent py-5"
       )}
@@ -52,16 +55,21 @@ export function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium hover:text-accent transition-colors"
+              className={cn(
+                "text-sm font-medium transition-colors hover:text-accent",
+                pathname === link.href ? "text-accent" : "text-muted-foreground"
+              )}
             >
               {link.name}
             </Link>
           ))}
           <div className="flex items-center gap-4 border-l pl-6 ml-2">
             <ThemeToggle />
-            <Button className="bg-accent hover:bg-accent/90 text-white font-semibold">
-              Get Started
-            </Button>
+            <Link href="/contact">
+              <Button className="bg-accent hover:bg-accent/90 text-white font-semibold rounded-full px-6">
+                Get Started
+              </Button>
+            </Link>
           </div>
         </nav>
 
@@ -96,9 +104,11 @@ export function Navbar() {
               {link.name}
             </Link>
           ))}
-          <Button className="w-full max-w-xs bg-accent text-white h-12 text-lg">
-            Get a Quote
-          </Button>
+          <Link href="/contact" className="w-full max-w-xs">
+            <Button onClick={() => setIsMenuOpen(false)} className="w-full bg-accent text-white h-12 text-lg rounded-full">
+              Get a Quote
+            </Button>
+          </Link>
         </div>
       </div>
     </header>
