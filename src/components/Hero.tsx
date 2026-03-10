@@ -18,7 +18,7 @@ const heroSlides = [
     title: "Protect Your Family's Future",
     subtitle: "Elite Family Protection",
     description: "Tailored life and health solutions designed for the ones you love most.",
-    image: "https://picsum.photos/seed/insurance-family/1200/800",
+    image: "/assets/children.jpg",
     icon: <Heart className="w-6 h-6" />,
     hint: "happy family"
   },
@@ -26,7 +26,7 @@ const heroSlides = [
     title: "Secure Your Global Enterprise",
     subtitle: "Corporate Risk Management",
     description: "Expert industrial coverage that keeps your business moving forward in a changing world.",
-    image: "https://picsum.photos/seed/insurance-business/1200/800",
+    image: "/assets/health.jpg",
     icon: <Briefcase className="w-6 h-6" />,
     hint: "modern skyscraper"
   },
@@ -34,7 +34,7 @@ const heroSlides = [
     title: "Innovating Health & Wellness",
     subtitle: "Next-Gen Medical Care",
     description: "Access premium healthcare networks and digital wellness tools globally.",
-    image: "https://picsum.photos/seed/insurance-medical/1200/800",
+    image: "/assets/life.jpg",
     icon: <Activity className="w-6 h-6" />,
     hint: "medical facility"
   }
