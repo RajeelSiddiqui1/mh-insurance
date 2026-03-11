@@ -5,10 +5,12 @@ on:
     branches:
       - main
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -21,5 +23,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd /home/devop/mh-insurance
-            git pull
+            git reset --hard
+            git pull origin main
             docker compose up -d --build
