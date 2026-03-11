@@ -15,7 +15,7 @@ import Autoplay from "embla-carousel-autoplay";
 
 const heroSlides = [
   {
-    title: "rajeel siddiqui",
+    title: "Protect Your Family's Future",
     subtitle: "Elite Family Protection",
     description: "Tailored life and health solutions designed for the ones you love most.",
     image: "/assets/children.jpg",
