@@ -1,10 +1,9 @@
 version: "3.8"
 
 services:
- frontend:
-  build: .
-  conatiner_name: mh_insurence
-  ports:
-    - "3001:3000"
-
-  restart:always  
+  frontend:
+    build: .
+    container_name: mh_insurence
+    ports:
+      - "3001:3000"
+    restart: always
