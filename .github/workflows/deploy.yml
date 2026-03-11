@@ -22,6 +22,7 @@ jobs:
           username: root
           key: ${{ secrets.SSH_KEY }}
           script: |
+            git config --global --add safe.directory /home/devop/mh-insurance
             cd /home/devop/mh-insurance
             git reset --hard
             git pull origin main
